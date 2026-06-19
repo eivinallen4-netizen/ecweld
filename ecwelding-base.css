@@ -78,7 +78,7 @@ ul { list-style: none; }
 }
 
 /* ============================================================
-   LISTS
+   LISTS — plain bullets, no absolute-positioned dashes
 ============================================================ */
 .bullet-list {
   display: flex;
@@ -210,7 +210,7 @@ ul { list-style: none; }
 }
 
 /* ============================================================
-   HEADER
+   HEADER — mobile: logo + CTA + hamburger; desktop: full nav
 ============================================================ */
 .site-header {
   position: sticky;
@@ -237,7 +237,7 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
-.site-nav { display: none; }
+.site-nav { display: none; } /* hidden on mobile */
 
 .header-actions {
   display: flex;
@@ -264,6 +264,7 @@ ul { list-style: none; }
   flex-shrink: 0;
 }
 
+/* Mobile nav drawer */
 .mobile-nav {
   display: none;
   background: var(--bg-white);
@@ -641,6 +642,7 @@ ul { list-style: none; }
 .cta-banner__sub {
   font-size: 16px;
   color: #AAAAAA;
+  margin-bottom: var(--sp-24);
   max-width: 540px;
   margin-inline: auto;
   margin-bottom: var(--sp-24);
@@ -649,7 +651,7 @@ ul { list-style: none; }
 /* ============================================================
    CONTACT
 ============================================================ */
-.contact-layout { display: flex; flex-direction: column; gap: 40px; }
+.contact-layout { display: flex; flex-direction: column; gap: var(--sp-40, 40px); }
 
 .contact-info { display: flex; flex-direction: column; gap: var(--sp-20); }
 
@@ -768,7 +770,7 @@ ul { list-style: none; }
 .footer-bottom__links a { font-size: 13px; color: #666; }
 
 /* ============================================================
-   SPARK BURST
+   SPARK BURST — decorative watermark on CTA banner
 ============================================================ */
 .spark-burst {
   position: absolute;
@@ -782,7 +784,7 @@ ul { list-style: none; }
 }
 
 /* ============================================================
-   WELD BEAD DIVIDER
+   WELD BEAD DIVIDER — decorative accent above contact section
 ============================================================ */
 .weld-bead-divider {
   line-height: 0;
@@ -804,6 +806,7 @@ ul { list-style: none; }
   .section { padding-block: var(--sp-96); }
   .section-heading { font-size: 36px; }
 
+  /* Header */
   .site-header__inner { height: 68px; }
   .site-logo { font-size: 20px; }
 
@@ -830,6 +833,7 @@ ul { list-style: none; }
   .mobile-nav { display: none !important; }
   .btn-call-desktop { display: inline-block; }
 
+  /* Trust bar */
   .trust-bar__inner {
     flex-direction: row;
     flex-wrap: wrap;
@@ -837,32 +841,42 @@ ul { list-style: none; }
     gap: var(--sp-32);
   }
 
+  /* Hero */
   .hero__headline { font-size: 38px; }
   .img-placeholder--hero { height: 360px; }
 
+  /* Service grid: 2-col */
   .service-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
   }
 
+  /* Trust grid: 2-col */
   .trust-grid { grid-template-columns: 1fr 1fr; gap: var(--sp-24); }
 
+  /* Gallery: 4-col */
   .gallery-grid { grid-template-columns: repeat(4, 1fr); }
   .gallery-item .img-placeholder       { height: 160px; }
   .gallery-item--large .img-placeholder { height: 332px; }
 
+  /* Reviews: 2-col */
   .reviews-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-24); }
 
+  /* Areas */
   .areas-layout { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-48); align-items: center; }
 
+  /* FAQ */
   .faq-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 0 var(--sp-48); }
 
+  /* Contact form */
   .contact-form { padding: var(--sp-48); }
   .form-row { flex-direction: row; }
   .form-row .form-field { flex: 1; }
 
+  /* CTA */
   .cta-banner__heading { font-size: 32px; }
 
+  /* Footer */
   .footer-grid { display: grid; grid-template-columns: 1fr 1fr; }
   .footer-bottom { flex-direction: row; justify-content: space-between; align-items: center; }
 }
@@ -876,6 +890,7 @@ ul { list-style: none; }
 
   .header-actions .btn { padding: 10px 20px; font-size: 13px; }
 
+  /* Hero: split 50/50 */
   .hero__layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -895,14 +910,19 @@ ul { list-style: none; }
   .hero__image .img-placeholder { height: 100%; min-height: 480px; }
   .img-placeholder--hero { height: 100%; min-height: 480px; }
 
+  /* Trust bar */
   .trust-bar__inner { gap: var(--sp-48); }
 
+  /* Trust grid: 3-col */
   .trust-grid { grid-template-columns: repeat(3, 1fr); }
 
+  /* Gallery: large item spans 2 rows */
   .gallery-item--large { grid-row: span 2; }
 
+  /* Reviews: 3-col */
   .reviews-grid { grid-template-columns: repeat(3, 1fr); }
 
+  /* Contact: split */
   .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -910,5 +930,6 @@ ul { list-style: none; }
     align-items: start;
   }
 
+  /* Footer: 4-col */
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr; gap: var(--sp-48); }
 }
